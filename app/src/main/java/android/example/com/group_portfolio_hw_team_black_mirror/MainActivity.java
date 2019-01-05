@@ -1,9 +1,13 @@
 package android.example.com.group_portfolio_hw_team_black_mirror;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -21,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private ActionBar actionBar;
     private NavigationView navigationView;
+    private static final int NOTIFICATION_ID = 555;
+    private static final String NOTIFICATION_CHANNEL = "Pursuit Notifications";
+
 
     /**
      * Condense your drawable directory unused resources make applications larger and slow down builds.
@@ -31,9 +38,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        int NOTIFICATION_ID = 555;
+
+        Intent intent = new Intent(MainActivity.this, Khaing_Biography.class);
+
+        int requestID = (int) System.currentTimeMillis();
+        int flags = PendingIntent.FLAG_CANCEL_CURRENT;
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, requestID, intent, flags);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
+                .setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle("Notification")
+                .setContentText("Check out that page later!");
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(NOTIFICATION_ID, builder.build());
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);

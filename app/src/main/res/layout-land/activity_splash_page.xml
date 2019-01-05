@@ -9,6 +9,13 @@
     tools:context=".SplashPage"
     >
 
+    <pl.droidsonroids.gif.GifTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/black_mirror_two"
+        />
+<!--
+
 
     <ImageView
         android:id="@+id/splashImage"
@@ -42,5 +49,6 @@
         app:layout_constraintStart_toStartOf="@id/splashImage"
         app:layout_constraintTop_toTopOf="@id/splashImage"
         app:layout_constraintVertical_bias="0.93" />
+-->
 
 </android.support.constraint.ConstraintLayout>

@@ -9,8 +9,13 @@
     tools:context=".SplashPage"
     >
 
+    <pl.droidsonroids.gif.GifTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/black_mirror_two"
+        />
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/splashImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +26,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/black_mirror" />
+        app:srcCompat="@drawable/black_mirror_two" />
 
     <TextView
         android:id="@+id/splashView"
@@ -41,5 +46,5 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="@id/splashImage"
         app:layout_constraintTop_toTopOf="@id/splashImage"
-        app:layout_constraintVertical_bias="0.933" />
+        app:layout_constraintVertical_bias="0.933" />-->
 </android.support.constraint.ConstraintLayout>

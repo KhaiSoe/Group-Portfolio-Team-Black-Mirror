@@ -22,7 +22,7 @@ public class SplashPage extends AppCompatActivity {
         public void run() {
 
             try {
-                sleep(1300);
+                sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
